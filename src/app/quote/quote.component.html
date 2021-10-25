@@ -101,7 +101,7 @@
                                 <h5 *ngIf="from.touched && from.errors?.required">
                                     *Required
                                 </h5>
-                                <h5 *ngIf="from.touched && from.errors?.pattern">
+                                <h5 *ngIf="from.touched && from.errors?.minLength">
                                     Enter valid address
                                 </h5>
                             </div>
@@ -138,7 +138,7 @@
                                 <h5 *ngIf="to.touched && to.errors?.required">
                                     *Required
                                 </h5>
-                                <h5 *ngIf="to.touched && to.errors?.pattern">
+                                <h5 *ngIf="to.touched && to.errors?.minLength">
                                     Enter valid address
                                 </h5>
                             </div>
