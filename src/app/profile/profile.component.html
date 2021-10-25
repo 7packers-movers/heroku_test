@@ -1,0 +1,121 @@
+<section class="body">
+    <div class="Heading">
+        <h1 class="title">USER PROFILE</h1>
+    </div>
+    <section class='profile'>
+        <h1 class='profilefont'></h1>
+    </section>
+    <section class='profile'>
+        <div class='profile_head'>
+            <div class="profile_name">
+
+                <h1>Hello {{specifiedUser.name}} &nbsp;</h1>
+            </div>
+            <div class="profile_pic"><button (click)="editprofile()" class="btn">edit profile</button>
+            </div>
+        </div>
+    </section>
+    <section class="profile">
+        <div class='profile_body'>
+            <div class="usrdetail_head">User Details</div>
+            <div class="usrdetail">
+                <div>Phone</div>
+                <div>{{specifiedUser.phone}}&nbsp;</div>
+            </div>
+            <div class="usrdetail">
+                <div>Email</div>
+                <div>{{specifiedUser.email}}&nbsp;</div>
+            </div>
+            <div class="usrdetail">
+                <div>Password</div>
+                <div>{{psw}}&nbsp;</div>
+            </div>
+        </div>
+    </section>
+    <section class="profile">
+        <div class="order_details">
+
+            <div class="order_head">Current Orders</div>
+
+            <div class="current_order">
+                <div *ngIf = "count" class="text">
+                    No pending orders
+                </div>
+                
+                <div *ngFor="let or of allorder">
+                    <div *ngIf="or.Record_status == 1">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">{{or.Product_shipping}}</h5>
+                                <p class="card-text">{{or._id}}</p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">From -{{or.From_door_and_address}},{{or.From_city}},{{or.From_state}}</li>
+                                <li class="list-group-item">To - {{or.To_door_and_address}},{{or.To_city}},{{or.To_state}}</li>
+                                <li class="list-group-item">Date - {{or.Date}}</li>
+                                <li class="list-group-item">Amount - Rs. {{or.Price}}</li>
+
+                            </ul>
+                            <div class="card-body">
+                                <button (click) = "cancel(or)" class="card-link">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="order_head">Completed  Orders</div>
+
+            <div class="history">
+                <div *ngIf = "completed" class ="text">
+                    No Completed orders
+                </div>
+                <div *ngFor="let or of allorder">
+                    <div *ngIf="or.Record_status == 0">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">{{or.Product_shipping}}</h5>
+                                <p class="card-text">{{or._id}}</p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">From - {{or.From_door_and_address}},{{or.From_city}},{{or.From_state}}</li>
+                                <li class="list-group-item">To - {{or.To_door_and_address}},{{or.To_From_city}},{{or.To_state}}</li>
+                                <li class="list-group-item">Date - {{or.Date}}</li>
+                                <li class="list-group-item">Amount - Rs. {{or.Price}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="order_head">Cancelled Orders</div>
+
+            <div class="history">
+                <div *ngIf = "cancelled" class = "text">
+                    No Cancelled orders
+                </div>
+                <div *ngFor="let or of allorder">
+                    <div *ngIf="or.Record_status == -1">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">{{or.Product_shipping}}</h5>
+                                <p class="card-text">{{or._id}}</p>
+
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">From - {{or.From_door_and_address}},{{or.From_city}},{{or.From_state}}</li>
+                                <li class="list-group-item">To - {{or.To_door_and_address}},{{or.To_city}},{{or.To_state}}</li>
+                                <li class="list-group-item">Date - {{or.Date}}</li>
+                                <li class="list-group-item">Amount - Rs. {{or.Price}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</section>
+

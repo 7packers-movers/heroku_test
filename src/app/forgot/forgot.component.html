@@ -1,0 +1,40 @@
+<div class="container"> 
+    <div class="logreg-box">
+        <div class="login-left"></div>
+        <div class="login-right">
+            <img class = 'logo' src="../../assets/images/logo5.jpg">
+            <h2>Forgot Password</h2>
+            <form [formGroup] = "userForm" (ngSubmit) = "onSubmit()">
+                <input type="text" class="field" placeholder="E-Mail" formControlName = "email">
+                <div *ngIf="submitted && email.errors">
+                    <h5 *ngIf="email.errors?.required" class="valid">
+                      *Email is Required Field
+                    </h5>
+                    <h5 *ngIf="email.errors?.email" class="valid">
+                      *Not a Valid email
+                    </h5>
+                </div>
+                <div>
+                    <h5 *ngIf = "submitted && uerr" class="valid">
+                        {{error.text}}
+                    </h5>
+                </div>
+
+                <div *ngIf = "valid">
+                    <input type="text" class="field" placeholder="Enter password" formControlName = "psw">
+                    <button class="btn" >Change</button><br>
+                </div>
+                <div *ngIf = "!valid">
+                    <button class="btn" >Reset</button><br>
+                </div>
+                
+                <a routerLink="/Login">Cancel</a>
+                <br>
+                <br>
+                
+            </form> 
+        </div>
+    </div>
+</div>
+
+  

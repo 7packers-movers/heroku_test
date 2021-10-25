@@ -1,0 +1,57 @@
+
+<div class="container">
+    <div class="logreg-box">
+      <div class="login-left"></div>
+      <div class="login-right">
+        <!-- <a href="home.html"><label class="close">X</label></a> -->
+        <img class="logo" src="../../assets/images/logo5.jpg"/>
+        <h2>Login</h2>
+        <!-- <button (click)="logout()">Logout</button> -->
+        <form [formGroup] = "loginForm" (ngSubmit)="onSubmit()">
+			<input
+			type="text"
+			class="field"
+			placeholder="Enter your Email"
+			formControlName = "email"
+			/>
+			<div *ngIf="submitted && email.errors">
+				<h5 *ngIf="email.errors?.required" class="valid">
+				*Email is Required Field
+				</h5>
+			</div>
+			<div *ngIf = "email.errors">
+				<h5 *ngIf="email.touched && email.errors?.email" class="valid">
+				*Not a Valid email
+				</h5>
+			</div>
+			
+			<input type="password" class="field" placeholder="Password" formControlName = "psw"/>
+
+			<div *ngIf="submitted && psw.errors">
+				<h5 *ngIf="psw.errors?.required" class="valid">
+				*Password is Required Field
+				</h5>
+			</div>
+      <div>
+        <h5 class="valid">
+          {{error}}
+        </h5>
+      </div>
+			<button type="submit" class="btn">Login</button>
+        </form>
+        <a class="forgot" routerLink="/Forgot">Forgot Password ?</a>
+          <label class="signup">New User ?
+            <a routerLink="/Register">Register Now</a>
+          </label>
+        <!-- <hr /> -->
+        <!-- <label>or</label> -->
+        <!-- <hr /> -->
+        <!-- <div class="social">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+          <i class="fab fa-google" aria-hidden="true"></i>
+          <i class="fab fa-twitter-square" aria-hidden="true"></i>
+        </div> -->
+      </div>
+    </div>
+  </div>
+  

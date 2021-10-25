@@ -1,0 +1,288 @@
+
+
+
+
+/*why choose us*/
+
+.career-banner img {
+    width: 100%;
+    }
+
+.wrapper h2 {
+text-transform: uppercase;
+font-weight: bold;
+text-align: center;
+font-size: 4em;
+margin: 1em 0 0;
+}
+.line {
+width: 350px;
+height: 3px;
+background:skyblue;
+margin: 0 auto 60px auto;
+}
+
+#why-choose-us{
+    padding-top: 30px;
+    padding-bottom:50px;
+
+}
+#why-choose-us .row{
+    padding-top:10px;
+    
+}
+
+   
+    .single-service {
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    padding:10%;
+    }
+    .social {
+    width: 60px;
+    height: 60px;
+    background: black;
+    border-radius: 50%;
+    margin: 5% auto;
+    }
+    .social i {
+    font-size: 30px;
+    padding: 15px;
+    color: white;
+    }
+    
+    
+    
+    .single-service h3 {
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color:black;
+    font-weight: 600;
+    }
+    
+    .single-service p {
+     color: rgb(0, 19, 128);
+    font-size: 17px;
+    line-height:27px;
+    
+    }
+    .single-service span {
+    position: absolute;
+    top: 0;
+    left: -110%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.2),rgb(19, 104, 202));
+    transition: .7s;
+    transform: skewX(10deg);
+    }
+    
+    .single-service:hover span {
+    left: 110%;
+    }
+    
+/*why choose us responsive*/
+@media(max-width:770px){
+    .wrapper h2 {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 2em;
+        margin: 1em 0 0;
+        }
+}
+@media(min-width:768px) and (max-width:1023px){
+    img{
+    
+        max-width:50%;
+        height:auto;
+    }
+    
+   
+
+}
+/*our partners*/
+.slider{
+    height: 250px;
+    margin: auto;
+    position: relative;
+    width: 90%;
+    display: grid;
+    place-items: center;
+    overflow:hidden;
+}
+.slide-Track{
+ display: flex;
+ width: 100%;
+ height:60%;
+ animation:scroll 30s linear infinite;
+ }
+/*@keyframes scroll{
+    0%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(100%);
+
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}  */
+.slide{
+    height: 200px;
+    width: 250px;
+    display: flex;
+    align-items:center;
+    padding:15px;
+    perspective:100px;
+}
+ img{
+    width:100%;
+    transition:transform 1%;
+}
+img:hover{
+    transform:translateZ(20px);
+    }
+
+.slider::before,
+.slider::after{
+    background: linear-gradient(to right,rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+    content: '';
+    height: 100%;
+    position: absolute;
+    width: 15%;
+    z-index:2;
+}
+.slider::before{
+    left:0;
+    top:0;
+}
+.slider::after{
+    right:0;
+    top:0;
+    transform: rotateZ(100deg);
+}
+@media(max-width:800px)
+{
+    .slider{
+        height: 250px;
+        margin: auto;
+        position: relative;
+        width: 100%;
+        display: grid;
+        place-items: center;
+        overflow:hidden;
+    }
+    .slide-Track{
+        display: flex;
+        width: 100%;
+        animation:scroll 30s linear infinite;
+       }
+    .slide{
+        height: 200px;
+        width: 250px;
+        display: flex;
+        align-items:center;
+        padding:15px;
+        perspective:100px;
+    }
+    .slide img{
+        width:100%;
+        transition:transform 1%;
+    }
+    img:hover{
+        transform:translateZ(20px);
+        }
+}
+/*gallery*/
+#head h1{
+    
+	text-align:center;
+	top:600px;
+
+}
+.contain{
+    width: 1300px;
+    position: relative;
+    top:100px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+	margin-left:100px;
+	
+}
+
+.contain .box
+{
+    background-color: thistle;
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+    display: inline-block;
+
+}
+
+.contain .box .imgBox{
+    position: relative;
+    overflow: hidden;
+	
+	
+    
+}
+
+.contain .box .imgBox img{
+    max-width: 100%;
+    height: 300px;
+    transition: transform 2s;
+	
+	
+}
+.contain .box:hover .imgBox img{
+    transform: scale(1.2);
+}
+.contain .box:hover .details{
+    transform: scaleY(1);
+
+}
+
+/*gallery responsive*/
+@media(max-width:800px)
+{
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+	
+    .contain{
+		width:50%;
+        display:flex;
+		flex-direction: column;
+        margin-bottom:60px;
+        top:100px;
+        align-items: center;
+        padding-bottom: 50px;
+    }
+    .Heading{
+        position:absolute;
+        top:70px;
+        width: 350px;
+    }
+}
+@media(min-width:801px) and (max-width:1800px){
+    *{
+        margin: 0%;
+        padding: 0%;
+
+    }
+    .contain{
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 50px;
+    }
+}
