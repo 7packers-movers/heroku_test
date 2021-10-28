@@ -15,9 +15,6 @@ export class AppComponent {
     if(this.uS.loggedIn()){
       this.uS.autologin()
     }
-    this.aR.data.subscribe((data) => {
-      console.log("Welcome back : ",data.user.name);
-    })
    } 
 } 
  

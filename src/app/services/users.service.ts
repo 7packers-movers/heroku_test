@@ -37,8 +37,6 @@ export class UsersService {
   }
 
   loggedUser(){
-    console.log("get user");
-    
     return this.http.get('/users/user');
   }
   autologin(){
