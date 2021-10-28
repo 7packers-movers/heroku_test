@@ -24,8 +24,6 @@ export class PaymentComponent implements OnInit {
       this.router.navigateByUrl('/Login')
     }
     else{
-      //console.log(this.us.order);
-      
       this.amt = this.us.order.Price
       this.buildForm();
     }

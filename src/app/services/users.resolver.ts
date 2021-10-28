@@ -15,13 +15,15 @@ import { catchError } from 'rxjs/internal/operators';
 export class UsersResolver implements Resolve<boolean> {
   users : any;
 
-  constructor(private http: HttpClient,public uS:UsersService) { }
+  constructor(private http: HttpClient,public uS:UsersService,public router : Router) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
     return this.http.get("/users/user").pipe(
       catchError(err => {
         console.error(err);
         alert('Your session is expired.Please login again')
+        localStorage.clear();
+        this.router.navigateByUrl('/Login')
         return of(null)
       })
     )
