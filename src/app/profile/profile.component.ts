@@ -20,6 +20,10 @@ export class ProfileComponent implements OnInit {
                 this.ur.data.subscribe((data) => {
                   this.specifiedUser = data.user
                   this.allorder = data.order
+                },
+                (err) =>{
+                  console.log(err);
+                  alert("Your session is expired.Please login again.")
                 })
               }
   user:any;
