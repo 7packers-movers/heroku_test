@@ -76,7 +76,7 @@ app.post('/login', (req, res) => {
                 {
                     const _id = data[0]._id;
                     const token = jwt.sign({_id},"secret_key_goes",{
-                        expiresIn : "2d"
+                        expiresIn : "10000ms"
                     })
                     res.status(200).json({token : token, data:data[0]});   
                 } else {
