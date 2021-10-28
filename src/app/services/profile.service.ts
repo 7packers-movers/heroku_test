@@ -9,10 +9,6 @@ export class ProfileService {
 
   constructor(public http: HttpClient, public ar: ActivatedRoute) { }
 
-  // getAllUser(){
-  //   return this.http.get("http://localhost:7060/userlist")
-  // }
-  //profile
   getSpecifiedUser() {
     return this.http.get("/user")
   }

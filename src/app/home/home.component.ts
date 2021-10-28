@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { UsersService } from '../services/users.service';
 
 @Component({
@@ -8,7 +9,10 @@ import { UsersService } from '../services/users.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public uS : UsersService) { 
+  constructor(public uS : UsersService,public aR : ActivatedRoute) { 
+    this.aR.data.subscribe((data) => {
+      console.log("Welcome back : ",data.user.name);
+    })
   }
 
   ngOnInit(): void {     

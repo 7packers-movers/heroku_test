@@ -25,7 +25,10 @@ const routes: Routes = [
   },
   {
     path : 'Home',
-    component : HomeComponent
+    component : HomeComponent,
+    resolve : {
+      user : UsersResolver
+    }
   },
   {
     path : 'Service',
