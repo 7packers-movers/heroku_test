@@ -23,8 +23,7 @@ export class UsersResolver implements Resolve<boolean> {
         console.error(err);
         alert('Your session is expired.Please login again')
         localStorage.clear();
-        this.router.navigateByUrl('/Login');
-        window.location.reload();
+        window.location.href = '/Login';
         return of(null)
       })
     )
