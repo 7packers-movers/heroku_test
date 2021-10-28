@@ -46,13 +46,6 @@ export class UsersService {
   loggedIn() {
     return localStorage.getItem('token');
   }
-  
-  getToken() {
-    //console.log(localStorage.getItem('token'));
-    
-    return localStorage.getItem('token');
-  }
-
   //-------------------------------------------------------------------
 
   profile() {
