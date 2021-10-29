@@ -7,8 +7,6 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class UsersService {
-
-  order : any;
   private URL = 'http://localhost:7080';
   isloggedin = new BehaviorSubject(false)
   user:any;
@@ -51,20 +49,6 @@ export class UsersService {
   profile() {
     return this.http.get('/Profile');
   }
-  // book() {
-  //   return this.http.get('/Payment')
-  // }
-
-
-
-  logoutuser() {
-    this.isloggedin.next(false)
-  }
-  logoinuser() {
-    this.isloggedin.next(true)
-  }
-
-
 
   //order table
 
