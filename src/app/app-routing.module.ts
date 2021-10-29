@@ -61,15 +61,18 @@ const routes: Routes = [
   },
   {
     path : 'Login',
-    component : LoginComponent
+    component : LoginComponent,
+    canActivate:[!AuthGuard]
   },
   {
     path : 'Forgot',
-    component : ForgotComponent
+    component : ForgotComponent,
+    canActivate:[!AuthGuard]
   },
   {
     path : 'Register',
-    component : RegisterComponent
+    component : RegisterComponent,
+    canActivate:[!AuthGuard],
   },
   {
     path : 'Payment',
